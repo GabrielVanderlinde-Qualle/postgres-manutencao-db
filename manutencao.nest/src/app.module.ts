@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ManutencaoModule } from './manutencao/manutencao.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       entities: [],
       synchronize: false, //Tabelas já Criadas no Banco Local
     }),
+    ManutencaoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
