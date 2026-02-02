@@ -13,8 +13,6 @@ export class ManutencaoService {
   ) {}
 
   async create(createManutencaoDto: CreateManutencaoDto) {
-    // CORREÇÃO: Transforma os números (IDs) em Objetos { codigo: X }
-    // O banco precisa disso para criar a relação
     const novaManutencao = this.manutencaoRepository.create({
       ...createManutencaoDto,
       tipoSistema: { codigo: createManutencaoDto.tipoSistema },
@@ -40,7 +38,6 @@ export class ManutencaoService {
   }
 
   async update(id: number, updateManutencaoDto: UpdateManutencaoDto) {
-    // CORREÇÃO: Se vierem IDs para atualizar, converte para objeto também
     const dadosAtualizacao: any = { ...updateManutencaoDto };
 
     if (updateManutencaoDto.tipoSistema) {

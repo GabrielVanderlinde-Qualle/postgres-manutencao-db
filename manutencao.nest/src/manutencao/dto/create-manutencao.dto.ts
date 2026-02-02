@@ -25,7 +25,6 @@ export class CreateManutencaoDto {
   @IsDateString()
   dataAgendamento?: Date;
 
-  // Geralmente cria-se sem finalizar, mas deixamos opcional
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   @IsOptional()
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
