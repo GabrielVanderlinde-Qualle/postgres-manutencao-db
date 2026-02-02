@@ -3,36 +3,49 @@ import {
   CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
+  ManyToOne,
+  JoinColumn,
 } from 'typeorm';
+import { TipoSistema } from '../../tipo_sistema/entities/tipo_sistema.entity';
+import { TipoOperacao } from '../../tipo_operacao/entities/tipo_operacao.entity';
+import { TipoCriticidade } from '../../tipo_criticidade/entities/tipo_criticidade.entity';
 
-@Entity('manutencao') //Nome de Tabela
+@Entity('manutencao')
 export class Manutencao {
   @PrimaryGeneratedColumn('identity', { name: 'codigo' })
   codigo: number;
 
-  @Column({ name: 'codigo_tipo_sistema' })
-  codigoTipoSistema: number;
+  // --- RELACIONAMENTOS ---
 
-  @Column({ name: 'codigo_tipo_operacao' })
-  codigoTipoOperacao: number;
+  @ManyToOne(() => TipoSistema)
+  @JoinColumn({ name: 'tipo_sistema' }) // Nome da coluna no Banco de Dados
+  tipoSistema: TipoSistema;
 
-  @Column({ name: 'codigo_tipo_criticidade' })
-  codigoTipoCriticidade: number;
+  @ManyToOne(() => TipoOperacao)
+  @JoinColumn({ name: 'tipo_operacao' })
+  tipoOperacao: TipoOperacao;
 
-  @CreateDateColumn({
+  @ManyToOne(() => TipoCriticidade)
+  @JoinColumn({ name: 'tipo_criticidade' })
+  tipoCriticidade: TipoCriticidade;
+
+  @Column({
     name: 'data_agendamento',
     type: 'timestamp',
     nullable: true,
   })
   dataAgendamento: Date;
 
-  @CreateDateColumn({
+  @Column({
     name: 'data_finalizada',
     type: 'timestamp',
     nullable: true,
   })
   dataFinalizada: Date;
 
-  @Column({ type: 'text', nullable: true }) //Texto Longo "text" e Opcional "nullable: true"
+  @CreateDateColumn({ name: 'data_cadastro', type: 'timestamp' })
+  dataCadastro: Date;
+
+  @Column({ type: 'text', nullable: true })
   descricao: string;
 }
