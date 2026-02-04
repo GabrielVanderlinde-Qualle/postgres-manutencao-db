@@ -43,7 +43,7 @@ export class Manutencao {
   })
   dataFinalizada: Date;
 
-  @CreateDateColumn({ name: 'data_cadastro', type: 'timestamp' })
+  @CreateDateColumn({ name: 'data_cadastro', type: 'timestamptz' })
   dataCadastro: Date;
 
   @Column({ type: 'text', nullable: true })

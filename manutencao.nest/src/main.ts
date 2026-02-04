@@ -1,3 +1,4 @@
+process.env.TZ = 'America/Brasilia'; // Força o fuso horário
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
