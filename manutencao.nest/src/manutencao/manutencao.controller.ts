@@ -34,7 +34,7 @@ export class ManutencaoController {
 
   @Get('contarSistema')
   contarPorSistema() {
-    return this.manutencaoService.findAll();
+    return this.manutencaoService.contarPorSistema();
   }
 
   // 2. Listar todas (padrão)
