@@ -3,8 +3,8 @@ import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateTipoSistemaDto {
   @ApiProperty({
-    example: 'Alerta Sul',
-    description: 'Nome do sistema a ser cadastrado',
+    example: 'Ex: AlertaSul, Qualle Hidro, etc',
+    description: 'Nome do sistema a ser Cadastrado',
   })
   @IsString({ message: 'O nome deve ser um texto.' })
   @IsNotEmpty({ message: 'O nome do sistema é obrigatório.' })

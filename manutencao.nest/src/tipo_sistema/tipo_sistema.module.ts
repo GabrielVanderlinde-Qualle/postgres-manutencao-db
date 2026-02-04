@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { TipoSistemaService } from './tipo_sistema.service';
-import { TipoSistemaController } from './tipo_sistema.controller';
-import { TipoSistema } from './entities/tipo_sistema.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { TipoSistema } from './entities/tipo_sistema.entity';
+import { TipoSistemaController } from './tipo_sistema.controller';
+import { TipoSistemaService } from './tipo_sistema.service';
 
 @Module({
   imports: [TypeOrmModule.forFeature([TipoSistema])],

@@ -18,7 +18,6 @@ export class TipoCriticidadeService {
     return this.tipoCriticidadeRepository.save(createTipoCriticidadeDto);
   }
 
-  
   // --- READ ---
   async findAll() {
     return this.tipoCriticidadeRepository.find({

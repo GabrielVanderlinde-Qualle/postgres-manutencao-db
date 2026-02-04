@@ -1,15 +1,15 @@
+import { ApiProperty } from '@nestjs/swagger'; // <--- Importante
 import {
   Column,
   CreateDateColumn,
   Entity,
-  PrimaryGeneratedColumn,
-  ManyToOne,
   JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
-import { ApiProperty } from '@nestjs/swagger'; // <--- Importante
-import { TipoSistema } from '../../tipo_sistema/entities/tipo_sistema.entity';
-import { TipoOperacao } from '../../tipo_operacao/entities/tipo_operacao.entity';
 import { TipoCriticidade } from '../../tipo_criticidade/entities/tipo_criticidade.entity';
+import { TipoOperacao } from '../../tipo_operacao/entities/tipo_operacao.entity';
+import { TipoSistema } from '../../tipo_sistema/entities/tipo_sistema.entity';
 
 @Entity('manutencao')
 export class Manutencao {
@@ -18,7 +18,7 @@ export class Manutencao {
   codigo: number;
 
   // --- RELACIONAMENTOS ---
-  
+
   @ManyToOne(() => TipoSistema)
   @JoinColumn({ name: 'tipo_sistema' })
   tipoSistema: TipoSistema;

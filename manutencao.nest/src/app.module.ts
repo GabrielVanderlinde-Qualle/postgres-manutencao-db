@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { ManutencaoModule } from './manutencao/manutencao.module';
-import { TipoSistemaModule } from './tipo_sistema/tipo_sistema.module';
-import { TipoOperacaoModule } from './tipo_operacao/tipo_operacao.module';
 import { TipoCriticidadeModule } from './tipo_criticidade/tipo_criticidade.module';
+import { TipoOperacaoModule } from './tipo_operacao/tipo_operacao.module';
+import { TipoSistemaModule } from './tipo_sistema/tipo_sistema.module';
 
 @Module({
   imports: [

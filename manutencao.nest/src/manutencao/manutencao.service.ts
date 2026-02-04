@@ -1,9 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Manutencao } from './entities/manutencao.entity';
-import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateManutencaoDto } from './dto/create-manutencao.dto';
 import { UpdateManutencaoDto } from './dto/update-manutencao.dto';
+import { Manutencao } from './entities/manutencao.entity';
 
 @Injectable()
 export class ManutencaoService {
@@ -39,7 +39,7 @@ export class ManutencaoService {
     });
 
     if (!manutencao) {
-        throw new NotFoundException(`Manutenção ID ${id} não encontrada`);
+      throw new NotFoundException(`Manutenção ID ${id} não encontrada`);
     }
     return manutencao;
   }
@@ -50,15 +50,23 @@ export class ManutencaoService {
 
     // 2. Montar o objeto de atualização de forma limpa
     const updateData: Partial<Manutencao> = {
-        ...updateManutencaoDto,
-        // Só adiciona o objeto se o ID foi enviado
-        tipoSistema: updateManutencaoDto.tipoSistema ? { codigo: updateManutencaoDto.tipoSistema } as any : undefined,
-        tipoOperacao: updateManutencaoDto.tipoOperacao ? { codigo: updateManutencaoDto.tipoOperacao } as any : undefined,
-        tipoCriticidade: updateManutencaoDto.tipoCriticidade ? { codigo: updateManutencaoDto.tipoCriticidade } as any : undefined,
+      ...updateManutencaoDto,
+      // Só adiciona o objeto se o ID foi enviado
+      tipoSistema: updateManutencaoDto.tipoSistema
+        ? ({ codigo: updateManutencaoDto.tipoSistema } as any)
+        : undefined,
+      tipoOperacao: updateManutencaoDto.tipoOperacao
+        ? ({ codigo: updateManutencaoDto.tipoOperacao } as any)
+        : undefined,
+      tipoCriticidade: updateManutencaoDto.tipoCriticidade
+        ? ({ codigo: updateManutencaoDto.tipoCriticidade } as any)
+        : undefined,
     };
 
     // Remove campos undefined para não apagar dados acidentalmente
-    Object.keys(updateData).forEach(key => updateData[key] === undefined && delete updateData[key]);
+    Object.keys(updateData).forEach((key) => {
+      if (updateData[key] === undefined) delete updateData[key];
+    });
 
     await this.manutencaoRepository.save({ codigo: id, ...updateData });
     return this.findOne(id);
@@ -67,7 +75,7 @@ export class ManutencaoService {
   async remove(id: number) {
     const result = await this.manutencaoRepository.delete(id);
     if (result.affected === 0) {
-        throw new NotFoundException(`Manutenção ID ${id} não encontrada para exclusão`);
+      throw new NotFoundException(`Manutenção ID ${id} não encontrada para exclusão`);
     }
     return { message: `Manutenção ${id} removida com sucesso` };
   }

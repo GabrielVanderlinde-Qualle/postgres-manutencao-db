@@ -1,18 +1,9 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-  ParseIntPipe,
-} from '@nestjs/common';
-import { ApiTags, ApiOperation, ApiResponse, ApiParam } from '@nestjs/swagger';
-import { ManutencaoService } from './manutencao.service';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post } from '@nestjs/common';
+import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { CreateManutencaoDto } from './dto/create-manutencao.dto';
 import { UpdateManutencaoDto } from './dto/update-manutencao.dto';
 import { Manutencao } from './entities/manutencao.entity';
+import { ManutencaoService } from './manutencao.service';
 
 @ApiTags('Manutenção') // Agrupa as rotas no Swagger
 @Controller('manutencao')
@@ -73,10 +64,7 @@ export class ManutencaoController {
   @ApiOperation({ summary: 'Atualiza dados de uma manutenção' })
   @ApiParam({ name: 'id', description: 'ID da manutenção a atualizar' })
   @ApiResponse({ status: 200, description: 'Atualizado com sucesso.' })
-  update(
-    @Param('id', ParseIntPipe) id: number,
-    @Body() updateManutencaoDto: UpdateManutencaoDto,
-  ) {
+  update(@Param('id', ParseIntPipe) id: number, @Body() updateManutencaoDto: UpdateManutencaoDto) {
     return this.manutencaoService.update(id, updateManutencaoDto);
   }
 

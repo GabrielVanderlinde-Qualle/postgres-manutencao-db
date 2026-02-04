@@ -2,7 +2,6 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { IsDateString, IsInt, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateManutencaoDto {
-
   // --- DESCRIÇÃO --
   @ApiProperty({
     description: 'Descrição detalhada da manutenção',
@@ -11,7 +10,6 @@ export class CreateManutencaoDto {
   @IsString()
   @IsNotEmpty()
   descricao: string;
-
 
   // --- TIPO SISTEMA --
   @ApiProperty({

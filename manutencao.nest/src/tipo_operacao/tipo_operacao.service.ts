@@ -35,7 +35,7 @@ export class TipoOperacaoService {
     return operacao;
   }
 
-    // --- UPDATE COM VERIFICAÇÃO ---
+  // --- UPDATE COM VERIFICAÇÃO ---
   async update(id: number, updateTipoOperacaoDto: UpdateTipoOperacaoDto) {
     // Garante que o registro existe antes de atualizar
     await this.findOne(id);
@@ -52,7 +52,9 @@ export class TipoOperacaoService {
     const result = await this.tipoOperacaoRepository.delete(id);
 
     if (result.affected === 0) {
-      throw new NotFoundException(`Tipo de Operação com código ${id} não encontrada para exclusão.`);
+      throw new NotFoundException(
+        `Tipo de Operação com código ${id} não encontrada para exclusão.`,
+      );
     }
 
     return { message: 'Removido com sucesso' };
