@@ -17,5 +17,5 @@ export class CreateTipoCriticidadeDto {
   })
   @IsOptional()
   @IsString()
-  descricao: string; // O '?' indica ao TypeScript que pode ser undefined
+  descricao: string;
 }

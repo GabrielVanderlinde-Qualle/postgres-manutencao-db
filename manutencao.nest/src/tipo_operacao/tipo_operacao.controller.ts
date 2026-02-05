@@ -18,13 +18,13 @@ export class TipoOperacaoController {
   }
 
   @ApiOperation({ summary: 'Lista todos os tipos de operação' })
-  @ApiResponse({ status: 200, type: [TipoOperacao] }) // <--- Nota: Colchetes [] indicam array
+  @ApiResponse({ status: 200, type: [TipoOperacao] })
   @Get()
   findAll() {
     return this.tipoOperacaoService.findAll();
   }
 
-  @ApiOperation({ summary: 'Busca um tipo de operação pelo ID' }) // <--- Texto corrigido
+  @ApiOperation({ summary: 'Busca um tipo de operação pelo ID' })
   @ApiResponse({ status: 200, type: TipoOperacao })
   @ApiResponse({ status: 404, description: 'Não encontrado' })
   @Get(':id')
