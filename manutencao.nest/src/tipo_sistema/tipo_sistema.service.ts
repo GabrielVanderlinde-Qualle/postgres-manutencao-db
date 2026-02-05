@@ -20,7 +20,7 @@ export class TipoSistemaService {
   // --- READ ---
   async findAll() {
     return this.tipoSistemaRepository.find({
-      order: { nome: 'ASC' },
+      order: { codigo: 'ASC' },
     });
   }
 
