@@ -1,0 +1,721 @@
+{
+  "info": {
+    "_postman_id": "eb9474fc-4dee-4ca3-b937-b6cefb2252bd",
+    "name": "Manutencao API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Manutenções",
+      "item": [
+        {
+          "name": "CRUD",
+          "item": [
+            {
+              "name": "Create",
+              "id": "56cbcdf4-4c1b-47cf-a124-c94578df69bb",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n   \r\n   \"tipoSistema\": ,      \r\n   \"tipoOperacao\": ,\r\n   \"tipoCriticidade\": ,\r\n   // Formato ISO 8601 (Ano-Mês-Dia T Hora:Minuto:Segundo)\r\n   \"dataAgendamento\": \" \",\r\n   \"descricao\": \" \"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - M}}",
+                  "host": [
+                    "{{URL - Local - V1 - M}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Read All",
+              "id": "9eced318-a18e-463a-8c4d-f657a3c5219f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - M}}",
+                  "host": [
+                    "{{URL - Local - V1 - M}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Read By ID",
+              "id": "c6565218-b302-4ae7-8e5d-eeaf0d7c6e1a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - M}}/1",
+                  "host": [
+                    "{{URL - Local - V1 - M}}"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update",
+              "id": "7bddb0b3-f09c-4a79-8d12-64a2b1edd4bc",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"tipoSistema\": ,\r\n  \"descricao\": \" \"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - M}}/1",
+                  "host": [
+                    "{{URL - Local - V1 - M}}"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete",
+              "id": "75e9ec24-1a11-4b38-b022-b95ce651435d",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - M}}/1",
+                  "host": [
+                    "{{URL - Local - V1 - M}}"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "da289d00-3d0a-4c8e-9637-973e73357ebd"
+        },
+        {
+          "name": "Querys",
+          "item": [
+            {
+              "name": "Relatório Geral",
+              "id": "48af85d1-09e4-453e-b3a9-f6443013b026",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - M}}/relatorio-geral",
+                  "host": [
+                    "{{URL - Local - V1 - M}}"
+                  ],
+                  "path": [
+                    "relatorio-geral"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Dashboard",
+              "id": "87e3e304-98ad-4289-902f-06467f843b81",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - M}}/dashboard/sistema",
+                  "host": [
+                    "{{URL - Local - V1 - M}}"
+                  ],
+                  "path": [
+                    "dashboard",
+                    "sistema"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "FinalizarManutencao",
+              "id": "68ce0415-d6ca-4b6c-80a6-99d6a837c01e",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"dataFinalizada\": \" \",\r\n  \"descricao\": \" \"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - M}}/1",
+                  "host": [
+                    "{{URL - Local - V1 - M}}"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Manutenções Pendentes",
+              "id": "9cc9f6d7-9107-4ef4-839d-1c0f50b717c9",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - M}}/pendentes",
+                  "host": [
+                    "{{URL - Local - V1 - M}}"
+                  ],
+                  "path": [
+                    "pendentes"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "e015c637-1d8d-470b-ac86-1b9c496c97f2"
+        }
+      ],
+      "id": "47cfeceb-5f02-4dbb-8f76-49045673bf4e"
+    },
+    {
+      "name": "Tipos de Sistema",
+      "item": [
+        {
+          "name": "CRUD",
+          "item": [
+            {
+              "name": "Create",
+              "id": "1042f808-b80c-47c6-8f42-0ebc47ffbe92",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nome\": \" \",\r\n    \"descricao\": \" \"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TS}}",
+                  "host": [
+                    "{{URL - Local - V1 - TS}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Read All",
+              "id": "64066e82-268d-491a-a786-3e13efc6678e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TS}}",
+                  "host": [
+                    "{{URL - Local - V1 - TS}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Read By ID",
+              "id": "ad974150-da3c-40f4-a871-502b16376344",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TS}}/1",
+                  "host": [
+                    "{{URL - Local - V1 - TS}}"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update",
+              "id": "860aeeb4-c7f6-4975-954b-442f30fb2f66",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"descricao\":\" \"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TS}}/1",
+                  "host": [
+                    "{{URL - Local - V1 - TS}}"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete",
+              "id": "5ed46995-ce56-45fb-a45c-e71f797e81b3",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TS}}/1",
+                  "host": [
+                    "{{URL - Local - V1 - TS}}"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "5edb0e7b-3880-4ec8-a905-832de011b6f1"
+        }
+      ],
+      "id": "24d18a14-83e8-49d9-aafa-5dc1d2b03126"
+    },
+    {
+      "name": "Tipos de Operação",
+      "item": [
+        {
+          "name": "CRUD",
+          "item": [
+            {
+              "name": "Create",
+              "id": "730784f4-95f4-44ed-8e0d-9d834bbfafaa",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nome\": \" \",\r\n    \"descricao\": \" \"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TO}}",
+                  "host": [
+                    "{{URL - Local - V1 - TO}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Read All",
+              "id": "3f3dfd4a-a3cf-4437-a69a-b6a5a336f72e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TO}}",
+                  "host": [
+                    "{{URL - Local - V1 - TO}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Read By ID",
+              "id": "bbac78b3-f11a-4a03-9eb5-48e05c7dd370",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TO}}/1",
+                  "host": [
+                    "{{URL - Local - V1 - TO}}"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update",
+              "id": "6bac6038-4ed1-4f7d-9b61-ffefbfcb4575",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"descricao\": \" \"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TO}}/1",
+                  "host": [
+                    "{{URL - Local - V1 - TO}}"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete",
+              "id": "1c46629b-380a-4921-91e6-5d17d5e77492",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TO}}/1",
+                  "host": [
+                    "{{URL - Local - V1 - TO}}"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "d4bda93a-c43d-497a-ac03-52006d2d4d53"
+        }
+      ],
+      "id": "d4c2f314-294d-44f6-bca0-4e155ba5495b"
+    },
+    {
+      "name": "Tipos de Criticidade",
+      "item": [
+        {
+          "name": "CRUD",
+          "item": [
+            {
+              "name": "Create",
+              "id": "6192e458-e6e4-4d48-8dba-71d6b63bc317",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nome\": \" \",\r\n    \"descricao\": \" \"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TC}}",
+                  "host": [
+                    "{{URL - Local - V1 - TC}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Read All",
+              "id": "68e38274-e0e4-4019-8027-06e746b39d5e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TC}}",
+                  "host": [
+                    "{{URL - Local - V1 - TC}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Read By ID",
+              "id": "6bd877d7-b600-46c2-aa4b-8bf0e94ccf95",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TC}}/1",
+                  "host": [
+                    "{{URL - Local - V1 - TC}}"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update",
+              "id": "4d1a79f4-b21a-48a9-98f5-79fe1604df45",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"descricao\": \" \"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TC}}/1",
+                  "host": [
+                    "{{URL - Local - V1 - TC}}"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete",
+              "id": "b3af1427-2cb4-45cb-8ec8-8bc5e7cacefe",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL - Local - V1 - TC}}/1",
+                  "host": [
+                    "{{URL - Local - V1 - TC}}"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "id": "5fae9f1d-829d-4955-a1ab-b69fb97813fd"
+        }
+      ],
+      "id": "451a8c34-d5f9-4653-9cc5-165f433ab7aa"
+    }
+  ]
+}
