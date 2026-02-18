@@ -33,6 +33,10 @@ export class Manutencao {
 
   // --- COLUNAS TABELAS MANUTENCAO ---
 
+  @ApiProperty({ example: '2024-02-01T10:00:00Z', description: 'Data de criação' })
+  @CreateDateColumn({ name: 'data_cadastro', type: 'timestamptz' })
+  dataCadastro: Date;
+
   @ApiProperty({ example: '2024-02-10T14:00:00Z', description: 'Data agendada' })
   @Column({ name: 'data_agendamento', type: 'timestamp', nullable: true })
   dataAgendamento: Date;
@@ -40,10 +44,6 @@ export class Manutencao {
   @ApiProperty({ example: null, description: 'Data de finalização (se houver)' })
   @Column({ name: 'data_finalizada', type: 'timestamp', nullable: true })
   dataFinalizada: Date;
-
-  @ApiProperty({ example: '2024-02-01T10:00:00Z', description: 'Data de criação' })
-  @CreateDateColumn({ name: 'data_cadastro', type: 'timestamptz' })
-  dataCadastro: Date;
 
   @ApiProperty({ example: 'Atualização', description: 'Descrição do serviço' })
   @Column({ type: 'text', nullable: true })
