@@ -12,6 +12,8 @@ export class ManutencaoService {
     private manutencaoRepository: Repository<Manutencao>,
   ) {}
 
+  // CREATE
+
   async create(createManutencaoDto: CreateManutencaoDto) {
     const novaManutencao = this.manutencaoRepository.create({
       ...createManutencaoDto,
@@ -25,6 +27,8 @@ export class ManutencaoService {
     return this.findOne(salvo.codigo);
   }
 
+  // READ ALL
+  
   findAll() {
     return this.manutencaoRepository.find({
       relations: ['tipoSistema', 'tipoOperacao', 'tipoCriticidade'],
@@ -32,6 +36,8 @@ export class ManutencaoService {
     });
   }
 
+  // READ BY ID
+  
   async findOne(id: number) {
     const manutencao = await this.manutencaoRepository.findOne({
       where: { codigo: id },
@@ -43,6 +49,8 @@ export class ManutencaoService {
     }
     return manutencao;
   }
+
+  // UPDATE
 
   async update(id: number, updateManutencaoDto: UpdateManutencaoDto) {
     await this.findOne(id);
@@ -79,6 +87,8 @@ export class ManutencaoService {
 
     return this.findOne(id);
   }
+
+  // DELETE
 
   async remove(id: number) {
     const result = await this.manutencaoRepository.delete(id);
